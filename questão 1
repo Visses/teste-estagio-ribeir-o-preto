@@ -1,0 +1,53 @@
+ 
+// 1) Ao final do processamento, qual será o valor da variável SOMA?
+
+public class Main {
+    public static void main(String[] args) {
+        int INDICE = 13, SOMA = 0, K = 0;
+
+        while (K < INDICE) {
+            K = K + 1;
+            SOMA = SOMA + K;
+        }
+
+        System.out.println("O valor da variável SOMA é:" + SOMA);
+    }
+}
+
+//2) 
+
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite um número: ");
+        int numero = scanner.nextInt();
+        
+        if (verificarFibonacci(numero)) {
+            System.out.println(numero + " pertence a sequência de Fibonacci.");
+        } else {
+            System.out.println(numero + " não pertence a sequência de Fibonacci.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean verificarFibonacci(int numero) {
+        int a = 0;
+        int b = 1;
+        
+        while (b <= numero) {
+            if (b == numero) {
+                return true;
+            }
+            
+            int temp = b;
+            b = a + b;
+            a = temp;
+        }
+        
+        return false;
+    }
+}
