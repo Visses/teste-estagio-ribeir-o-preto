@@ -1,0 +1,37 @@
+//2) criei um sistema em java com "if" "else" e "while" para concluir esse desafio.
+
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Informe um número:");
+        int numero = scanner.nextInt();
+        
+        if (verificarFibonacci(numero)) {
+            System.out.println(numero + " pertence a sequência de Fibonacci.");
+        } else {
+            System.out.println(numero + " não pertence a sequência de Fibonacci.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean verificarFibonacci(int numero) {
+        int a = 0;
+        int b = 1;
+        
+        while (b <= numero) {
+            if (b == numero) {
+                return true;
+            }
+            
+            int temp = b;
+            b = a + b;
+            a = temp;
+        }
+        
+        return false;
+    }
+}
